@@ -1,0 +1,93 @@
+.about-section {
+  padding: 2rem;
+  background-color: #f5f7f6;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f5c729;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  animation: fadeInUp 0.6s ease-in-out;
+}
+
+.about-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #6D8E8A;
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-card {
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* 🎨 Light color variations for each card */
+.about-card:nth-child(4n+1) {
+  background-color: #eef7f6;
+}
+.about-card:nth-child(4n+2) {
+  background-color: #fef5e7;
+}
+.about-card:nth-child(4n+3) {
+  background-color: #f0f7f5;
+}
+.about-card:nth-child(4n+4) {
+  background-color: #f9f9f9;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+}
+
+.about-card h2 {
+  color: #6D8E8A;
+  margin-bottom: 1rem;
+}
+
+.about-item {
+  margin-bottom: 1rem;
+}
+
+.about-item .year {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.about-item h3 {
+  font-size: 1.05rem;
+  margin: 0.3rem 0;
+  color: #333;
+}
+
+.about-item .subtext {
+  font-size: 0.9rem;
+  color: #666;
+}
