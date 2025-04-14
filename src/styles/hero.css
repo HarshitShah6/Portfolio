@@ -4,7 +4,8 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
@@ -13,9 +14,11 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  z-index: 0;
+  height: 120vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
 .hero-content {
@@ -24,8 +27,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 4rem;
-  z-index: 0;
+  z-index: 1;
   height: 100%;
+  flex-wrap: wrap;
 }
 
 .text-section {
@@ -41,39 +45,34 @@
   line-height: 70px;
 }
 
-
 .text-section h3 {
-  font-size: 24px;
-  font-weight: 400;
-}
-.harshit{
-  margin-bottom: 23px;
-}
-.text-section h3 {
-  /* margin-bottom: 18px; */
   font-size: 24px;
   margin-top: 0.5rem;
 }
+
+.harshit {
+  margin-bottom: 23px;
+}
+
 .image-section {
   background: transparent;
-
   position: relative;
   text-align: center;
+  flex: 1;
 }
 
 .profile-image {
-  background: transparent;
-  /* max-height: 450px; */
+  height: 45rem;
+  max-width: 100%;
+  width: auto;
   object-fit: contain;
-  /* margin-top: 5px; */
-height: 45rem;
 }
 
 .social-icons {
-  background-color: rgba(37,47,45,255);
+  background-color: rgba(37, 47, 45, 1);
   position: relative;
   top: 0;
-left: 30px;
+  left: 30px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -85,9 +84,9 @@ left: 30px;
   width: 40px;
   height: 40px;
   font-size: 20px;
-  background-color:#b0b3b2;
+  background-color: #b0b3b2;
   border-radius: 8px;
-  color:#252f2d;
+  color: #252f2d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,11 +99,12 @@ left: 30px;
   color: #000;
   transform: scale(1.1);
 }
+
 .resume-btn {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.8rem 1.5rem;
-  border: 2px solid #facc15; /* Yellow border */
+  border: 2px solid #facc15;
   color: #facc15;
   background: transparent;
   font-weight: bold;
@@ -112,10 +112,91 @@ left: 30px;
   text-decoration: none;
   transition: all 0.3s ease;
 }
+
 .resume-btn:hover {
   background: #facc15;
-  color: #1f2937; /* dark background text color */
+  color: #1f2937;
 }
 
+/* --------------------- Responsive Breakpoints --------------------- */
+
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .text-section {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .text-section h1 {
+    font-size: 45px;
+    line-height: 55px;
+  }
+
+  .text-section h3 {
+    font-size: 20px;
+  }
+
+  .profile-image {
+    height: 30rem;
+    margin-top: 2rem;
+  }
+
+  .social-icons {
+    left: 0;
+    flex-direction: row;
+    justify-content: center;
+    transform: none;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-section h1 {
+    font-size: 36px;
+    line-height: 46px;
+  }
+
+  .text-section h3 {
+    font-size: 18px;
+  }
+
+  .resume-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 14px;
+  }
+
+  .profile-image {
+    height: 24rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    height: 80%;
+    padding: 2rem 1rem;
+  }
+
+  .text-section h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .text-section h3 {
+    font-size: 16px;
+  }
 
 
+
+  .social-icons a {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}

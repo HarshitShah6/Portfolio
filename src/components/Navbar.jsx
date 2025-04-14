@@ -1,83 +1,53 @@
-import React from 'react';
-import '../styles/navbar.css';
+import React, { useState, useEffect } from 'react';
+import '../styles/Navbar.css';
 import { Link as ScrollLink } from 'react-scroll';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
-  window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 350) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-  
+  const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 350);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
-    <nav id="navbar" className="navbar">
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-logo">
         <span style={{ color: "white" }}>Harshit</span> Shah
       </div>
-      <ul className="nav-links">
-        <li>
-          <ScrollLink
-            to="home"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            activeClass="active-link"
-          >
-            Home
-          </ScrollLink>
-        </li>
-        <li>
-          <ScrollLink
-            to="about"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            activeClass="active-link"
-          >
-            About
-          </ScrollLink>
-        </li>
-        <li>
-          <ScrollLink
-            to="skills"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            activeClass="active-link"
-          >
-            Skills
-          </ScrollLink>
-        </li>
-        <li>
-          <ScrollLink
-            to="projects"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            activeClass="active-link"
-          >
-            Projects
-          </ScrollLink>
-        </li>
-        <li>
-          <ScrollLink
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            activeClass="active-link"
-          >
-            Contact Us
-          </ScrollLink>
-        </li>
+      <div className="hamburger" onClick={toggleMenu}>
+        {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+      </div>
+      <ul className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
+        {['home', 'about', 'skills', 'projects', 'contact'].map(section => (
+          <li key={section}>
+            <ScrollLink
+              to={section}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              activeClass="active-link"
+              onClick={closeMenu}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </ScrollLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );

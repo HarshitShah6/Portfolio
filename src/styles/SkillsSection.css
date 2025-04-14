@@ -1,9 +1,9 @@
 .skills-section {
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem;
-  background-color: #252f2d; /* Dark theme background */
-  color: #f5c729; /* Text color matches the theme */
+  padding: 2rem;
+  background-color: #252f2d;
+  color: #f5c729;
 }
 
 .skills-title {
@@ -19,21 +19,22 @@
 .skills-scroll {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  justify-content:center;
   overflow-x: auto;
-  gap:5rem;
+  gap: 2.5rem;
   padding: 2rem 1rem;
   scroll-behavior: smooth;
 }
 
 .skill-badge {
   min-width: 140px;
-  background-color: #f5c729; /* Bright yellow badge */
+  max-width: 180px;
+  background-color: #f5c729;
   border-radius: 20px;
   padding: 1.5rem 1rem;
   text-align: center;
-  color: #252f2d; /* Text color on yellow background */
+  color: #252f2d;
   font-size: 1.1rem;
   font-weight: 600;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -61,7 +62,7 @@
   border-radius: 10px;
 }
 
-/* Simple animations */
+/* Animations */
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -81,5 +82,70 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ---------------- Responsive Styles ---------------- */
+
+@media (max-width: 1024px) {
+  .skills-title {
+    font-size: 2.2rem;
+  }
+
+  .skill-badge {
+    font-size: 1rem;
+    min-width: 120px;
+    padding: 1.2rem 0.8rem;
+  }
+
+  .skill-badge .icon {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-title {
+    font-size: 2rem;
+  }
+
+  .skills-scroll {
+    gap: 2rem;
+    padding: 1.5rem 0.5rem;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    justify-content: flex-start; 
+  }
+
+  .skill-badge {
+    flex: 0 0 auto;
+    min-width: 130px;
+    padding: 1rem;
+  }
+
+  .skill-badge .icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-scroll {
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .skill-badge {
+    min-width: 110px;
+    font-size: 0.95rem;
+    padding: 0.9rem 0.7rem;
+  }
+
+  .skill-badge .icon {
+    font-size: 1.8rem;
   }
 }
