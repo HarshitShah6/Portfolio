@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/hero.css';
 import heroDesktop from '../assets/hero_img_chk.png';
-import heroMobile from '../assets/clean.png'; // Make sure this exists
+import heroMobile from '../assets/clean.png';
 
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   const [bgImage, setBgImage] = useState(heroDesktop);
@@ -13,9 +14,8 @@ const HeroSection = () => {
       setBgImage(window.innerWidth < 768 ? heroMobile : heroDesktop);
     };
 
-    updateBackground(); // Initial check
+    updateBackground();
     window.addEventListener('resize', updateBackground);
-
     return () => window.removeEventListener('resize', updateBackground);
   }, []);
 
@@ -27,23 +27,35 @@ const HeroSection = () => {
       ></div>
 
       <div className="hero-content">
-        <div className="text-section">
+        {/* Text Section */}
+        <motion.div
+          className="text-section"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="harshit">
-            <h3>Hello Am </h3>
+            <h3>Hello Am</h3>
             <h3>Harshit Shah</h3>
           </div>
           <h1>Software Designer</h1>
-          <a href="/Resume.pdf" download className="resume-btn">
+          <a href="/Harshit_Shah_Resume.pdf" download className="resume-btn">
             <span className="white-text">Get </span>My Resume
           </a>
-        </div>
+        </motion.div>
 
-        <div className="social-icons">
+        {/* Social Icons */}
+        <motion.div
+          className="social-icons"
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
           <a href="https://www.instagram.com/harshitshah159/?hl=en" target="_blank" rel="noreferrer"><FaFacebook /></a>
           <a href="https://x.com/?lang=en" target="_blank" rel="noreferrer"><FaTwitter /></a>
           <a href="https://www.linkedin.com/in/harshit-shah-630bb7358/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
           <a href="https://www.instagram.com/harshitshah159/?hl=en" target="_blank" rel="noreferrer"><FaInstagram /></a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

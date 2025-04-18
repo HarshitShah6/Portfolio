@@ -1,7 +1,7 @@
 .navbar {
   position: fixed;
   top: 0;
-  width: 90%;
+  width: 96%;
   padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -15,6 +15,7 @@
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   height: 85px;
+  width: 100%;
 }
 
 .nav-logo {

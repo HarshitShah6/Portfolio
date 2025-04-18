@@ -25,7 +25,7 @@ const AboutSection = () => {
             }
           ]}
         />
-        <AboutCard
+        {/* <AboutCard
           title="Experience"
           items={[
             {
@@ -39,7 +39,7 @@ const AboutSection = () => {
               subtext: 'Managing UI/UX projects with a team of 10+ designers.'
             }
           ]}
-        />
+        /> */}
         <AboutCard
           title="Skills"
           items={[
@@ -53,9 +53,12 @@ const AboutSection = () => {
         <AboutCard
           title="Interests"
           items={[
-            { heading: 'Tech Blogging' },
-            { heading: 'Data Visualization' },
-            { heading: 'Open Source Contribution' }
+            { heading: 'Coding & Problem Solving' },
+            { heading: 'Reading Books' },
+            { heading: 'Watching Movies & Series' },
+            { heading: 'Travelling' },
+            { heading: 'Sports Enthusiast' },
+            { heading: 'Learning New Frameworks' },
           ]}
         />
       </div>

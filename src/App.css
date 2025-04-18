@@ -2,3 +2,6 @@
 body{
   font-family: sans-serif poppins;
 }
+html {
+  scroll-behavior: smooth;
+}

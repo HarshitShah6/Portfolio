@@ -1,5 +1,5 @@
 .projects-section {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   background-color: #6D8E8A; /* Dark background */
   color: #f5c729;
 }
@@ -39,7 +39,7 @@
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-20px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
