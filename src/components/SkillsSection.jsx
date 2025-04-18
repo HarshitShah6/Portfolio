@@ -30,9 +30,7 @@ const SkillsSection = () => {
   <motion.div
     className="skill-badge"
     key={index}
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.2, delay: index * 0.1 }}
+   
     viewport={{ once: true }}
     whileHover={{
       scale: 1.08,
