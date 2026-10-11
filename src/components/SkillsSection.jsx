@@ -6,7 +6,6 @@ import {
 import {
   SiMongodb, SiFirebase, SiExpress, SiPostman
 } from 'react-icons/si';
-import { motion } from 'framer-motion';
 
 const skills = [
   { name: 'React', icon: <FaReact /> },

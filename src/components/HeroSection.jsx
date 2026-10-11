@@ -4,7 +4,6 @@ import heroDesktop from '../assets/hero_img_chk.png';
 import heroMobile from '../assets/clean.png';
 
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
-import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   const [bgImage, setBgImage] = useState(heroDesktop);

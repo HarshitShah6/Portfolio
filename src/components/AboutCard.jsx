@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import "../styles/AboutSection.css";
 
 const AboutCard = ({ title, items }) => {
